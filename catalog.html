@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الكاتالوج - Drone Line</title>
+    <!-- ربط ملف الـ CSS الرئيسي -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- ربط الأيقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- شريط التنقل العلوي -->
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <h1>Drone <span>Line</span></h1>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">الرئيسية</a>
+                <a href="catalog.html" class="active">الكاتالوج والمنتجات</a>
+            </nav>
+            <div class="header-action">
+                <a href="https://wa.me/201234567890" target="_blank" class="whatsapp-btn-header">
+                    <i class="fab fa-whatsapp"></i> تواصل معنا
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- قسم تصفية المنتجات (Filters) -->
+    <section class="catalog-header container">
+        <h2>كتالوج المنتجات</h2>
+        <p>تصفح أحدث موديلات الترنجات والعبايات واطلب بضغطة زر</p>
+        
+        <div class="filter-buttons">
+            <button class="filter-btn active" onclick="filterProducts('all')">الكل</button>
+            <button class="filter-btn" onclick="filterProducts('suits')">الترنجات</button>
+            <button class="filter-btn" onclick="filterProducts('abayas')">العبايات</button>
+        </div>
+    </section>
+
+    <!-- شبكة عرض المنتجات -->
+    <section class="products-section container">
+        <div class="products-grid" id="productsGrid">
+            
+            <!-- منتج 1: ترنج -->
+            <div class="product-card" data-category="suits">
+                <div class="product-img">
+                    <!-- حط مسار صورة الترنج هنا في خاصية src -->
+                    <img src="images/suit1.jpg" alt="ترنج رياضي شتوي">
+                    <span class="badge">ترنج</span>
+                </div>
+                <div class="product-info">
+                    <h3>ترنج رياضي شتوي فخم</h3>
+                    <p class="price">450 ج.م</p>
+                    <div class="options">
+                        <label>المقاس:</label>
+                        <select class="size-select">
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                            <option value="2XL">2XL</option>
+                        </select>
+                    </div>
+                    <button class="whatsapp-order-btn" onclick="orderOnWhatsApp('ترنج رياضي شتوي فخم', '450 ج.م', this)">
+                        <i class="fab fa-whatsapp"></i> اطلب عبر واتساب
+                    </button>
+                </div>
+            </div>
+
+            <!-- منتج 2: عباية -->
+            <div class="product-card" data-category="abayas">
+                <div class="product-img">
+                    <!-- حط مسار صورة العباية هنا في خاصية src -->
+                    <img src="images/abaya1.jpg" alt="عباية بيتي مطرزة">
+                    <span class="badge abaya-badge">عباية</span>
+                </div>
+                <div class="product-info">
+                    <h3>عباية بيتي راقية مطرزة</h3>
+                    <p class="price">380 ج.م</p>
+                    <div class="options">
+                        <label>المقاس:</label>
+                        <select class="size-select">
+                            <option value="Free Size">Free Size</option>
+                            <option value="Large">Large</option>
+                        </select>
+                    </div>
+                    <button class="whatsapp-order-btn" onclick="orderOnWhatsApp('عباية بيتي راقية مطرزة', '380 ج.م', this)">
+                        <i class="fab fa-whatsapp"></i> اطلب عبر واتساب
+                    </button>
+                </div>
+            </div>
+
+            <!-- منتج 3: ترنج -->
+            <div class="product-card" data-category="suits">
+                <div class="product-img">
+                    <img src="images/suit2.jpg" alt="ترنج كاجوال شبابي">
+                    <span class="badge">ترنج</span>
+                </div>
+                <div class="product-info">
+                    <h3>ترنج كاجوال شبابي عصري</h3>
+                    <p class="price">420 ج.م</p>
+                    <div class="options">
+                        <label>المقاس:</label>
+                        <select class="size-select">
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                        </select>
+                    </div>
+                    <button class="whatsapp-order-btn" onclick="orderOnWhatsApp('ترنج كاجوال شبابي عصري', '420 ج.م', this)">
+                        <i class="fab fa-whatsapp"></i> اطلب عبر واتساب
+                    </button>
+                </div>
+            </div>
+
+            <!-- منتج 4: عباية -->
+            <div class="product-card" data-category="abayas">
+                <div class="product-img">
+                    <img src="images/abaya2.jpg" alt="عباية استقبال أنيقة">
+                    <span class="badge abaya-badge">عباية</span>
+                </div>
+                <div class="product-info">
+                    <h3>عباية استقبال أنيقة للخروج</h3>
+                    <p class="price">520 ج.م</p>
+                    <div class="options">
+                        <label>المقاس:</label>
+                        <select class="size-select">
+                            <option value="1">مقاس 1</option>
+                            <option value="2">مقاس 2</option>
+                        </select>
+                    </div>
+                    <button class="whatsapp-order-btn" onclick="orderOnWhatsApp('عباية استقبال أنيقة للخروج', '520 ج.م', this)">
+                        <i class="fab fa-whatsapp"></i> اطلب عبر واتساب
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- الفوتر -->
+    <footer>
+        <div class="container">
+            <p>جميع الحقوق محفوظة &copy; 2026 <span>Drone Line</span></p>
+        </div>
+    </footer>
+
+    <!-- ربط ملف الجافاسكريبت -->
+    <script src="js/main.js"></script>
+</body>
+</html>
