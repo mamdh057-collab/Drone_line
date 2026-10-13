@@ -1,4 +1,49 @@
+/* ==========================================
+   إعدادات التجاوب مع الشاشات الصغيرة (الموبايل)
+   ========================================== */
+@media (max-width: 768px) {
+    
+    /* تصغير حجم شريط الهيدر وعرضه تحت بعضه لو المساحة ضيقة */
+    .main-header .container {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .nav-links {
+        gap: 10px;
+        font-size: 14px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* تكبير البانر الرئيسي عشان يناسب شاشات الموبايل */
+    .hero {
+        height: 320px;
+        padding: 0 15px;
+    }
+
+    .hero-content h2 {
+        font-size: 24px;
+    }
+
+    .hero-content p {
+        font-size: 14px;
+    }
+
+    /* عرض كروت المنتجات ورا بعض بشكل عمودي مرتب */
+    .category-grid, .products-grid {
+        grid-template-columns: 1fr; /* عرض منتج واحد في كل صف عشان يكون كبير وواضح */
+        gap: 20px;
+    }
+
+    .category-card {
+        width: 100%;
+    }
+}
+
 /* إعدادات عامة وتثبيت الخطوط والاتجاهات */
+
 * {
     margin: 0;
     padding: 0;
